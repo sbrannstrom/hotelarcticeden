@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg18"
+   width="37.119999"
+   height="41.053333"
+   viewBox="0 0 37.119999 41.053333"
+   sodipodi:docname="arctic.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <g
+     id="g26"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,41.053333)">
+    <g
+       id="g28"
+       transform="scale(0.1)">
+      <path
+         d="m 207.004,10.1953 c 0,0 34.992,3.3203 52.195,-0.59374 17.887,-4.07422 14.399,0.59374 14.399,0.59374 0,0 -7.032,25.0781 -22.196,64.1992 -8.957,23.086 -52.804,125.4025 -52.804,125.4025 0,0 21.39,23.43 45.601,44.398 24.207,20.973 34.199,28.203 34.199,28.203 0,0 -7.269,-2.121 -25.8,-13.8 -17.188,-10.832 -61.196,-42.602 -61.196,-42.602 0,0 -7.218,14.406 -12.004,22.805 -5.117,8.972 -10.199,15 -10.199,15 0,0 37.93,52.14 33.598,53.996 -4.324,1.851 -38.996,-45.598 -38.996,-45.598 0,0 -30.91,41.887 -40.203,44.399 -17.922,4.843 -1.2,-8.399 -1.2,-8.399 0,0 4.754,-7.222 9.004,-13.804 3.485,-5.407 23.399,-34.2 23.399,-34.2 0,0 -44.879,-60.937 -61.8049,-94.199 C 75.5781,121.746 66.8359,111.328 58.1992,91.7969 49.582,72.3047 0,0 0,0 0,0 32.3672,5.12891 49.1992,4.79688 68.6016,4.41406 66,7.19922 66,7.19922 c 0,0 26.1094,74.67578 55.801,112.80078 16.734,21.484 63.597,66.598 63.597,66.598 0,0 10.465,-35.188 15,-73.805 4.504,-38.3203 6.606,-102.5977 6.606,-102.5977"
+         style="fill:#c51a37;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path30" />
+      <path
+         d="m 160.199,239.996 c 0,0 -18.965,-32.055 -33.004,-57.598 -13.09,-23.832 -4.797,-24 -4.797,-24 0,0 6.118,3.317 54.606,47.399 1.672,1.523 -16.805,34.199 -16.805,34.199"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="path32" />
+    </g>
+  </g>
+</svg>

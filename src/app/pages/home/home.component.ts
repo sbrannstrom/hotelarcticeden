@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  menuOpen = false;
+
+  public scroll($element: HTMLElement): void {
+    $element.scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} );
+  }
 }

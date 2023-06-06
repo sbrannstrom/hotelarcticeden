@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class MenuComponent {
 
   mobileMenuOpen = false;
+
+  public scroll(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} );
+    }
+  }
 }

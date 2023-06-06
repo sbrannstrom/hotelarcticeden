@@ -2,3 +2,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  @font-face {
+    font-family: 'Lemon Milk';
+    src: url(/fonts/LemonMilk.otf) format("otf");
+  }
+  @font-face {
+    font-family: 'Red Hat Display';
+    font-weight: 500;
+    src: url(/fonts/RedHatDisplay.ttf) format("ttf");
+  }
+}

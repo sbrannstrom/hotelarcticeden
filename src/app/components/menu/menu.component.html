@@ -30,8 +30,8 @@
           <!-- Current: "border-bw-blue-default text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
           <a href="#" routerLinkActive="activeLink"
             class="inline-flex items-center border-b-2 border-bw-blue-default px-1 pt-1 text-sm font-medium text-gray-900">Hem</a>
-          <a href="#" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-bw-gray hover:border-bw-gray hover:text-bw-blue-default">
+          <a (click)="scroll('book')" routerLinkActive="activeLink"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-bw-gray hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Boka
           </a>
           <a href="#" routerLinkActive="activeLink"
