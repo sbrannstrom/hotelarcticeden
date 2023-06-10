@@ -2,7 +2,7 @@
   <app-menu></app-menu>
   <div class="flex flex-grow items-center justify-center mb-16"
     style="background-image: url('https://images.unsplash.com/photo-1618004652321-13a63e576b80?auto=format&q=75&fit=crop&w=1500');">
-    <div class="absolute top-16 mb-16 inset-0 bg-navy-default mix-blend-multiply"></div>
+    <div class="absolute top-16 mb-16 inset-0 bg-navy-default mix-blend-multiply z-0"></div>
     <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
       <!-- <p class="mb-4 text-center text-lg font-RedHatDisplay text-indigo-200 sm:text-xl md:mb-8">Best Western</p> -->
       <div class="flex flex-row mb-5">
@@ -33,7 +33,7 @@
 
 <!-- ABOUT SECTION CONTENT -->
 <div class="">
-  <div class="bg-navy-default py-6 sm:py-8 lg:py-12">
+  <div class="bg-snow-default py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div>
@@ -134,7 +134,7 @@
 <div class="bg-snow-default py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <div class="mx-auto flex max-w-xl flex-col items-center text-center">
-      <p class="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">Lorem Ipsum</p>
+      <p class="mb-4 font-semibold text-navy-default md:mb-6 md:text-lg xl:text-xl">Lorem Ipsum</p>
 
       <h1 class="text-black-800 mb-8 text-3xl font-bold sm:text-4xl md:mb-12 md:text-5xl">
         Pub Eden
@@ -142,7 +142,7 @@
 
       <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
         <a href="#"
-          class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+          class="inline-block rounded-lg bg-navy-default px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-navy-900 transition duration-100 hover:bg-black focus-visible:ring active:bg-black md:text-base">
           Book Table
         </a>
 
@@ -170,16 +170,17 @@
         class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">More</a>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       <!-- image - start -->
-      <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
+      <a href="#"
+        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
+        <img src="/assets/eden0.png"
           loading="lazy" alt="Photo by Minh Pham"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-        <div
+        <!-- <div
           class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-        </div>
+        </div> -->
 
         <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">VR</span>
       </a>
@@ -188,13 +189,13 @@
       <!-- image - start -->
       <a href="#"
         class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-        <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000"
+        <img src="/assets/eden1.png"
           loading="lazy" alt="Photo by Magicle"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-        <div
-          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-        </div>
+        <!-- <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-30">
+        </div> -->
 
         <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Tech</span>
       </a>
@@ -203,13 +204,13 @@
       <!-- image - start -->
       <a href="#"
         class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-        <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000"
+        <img src="/assets/eden2.png"
           loading="lazy" alt="Photo by Martin Sanchez"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-        <div
+        <!-- <div
           class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-        </div>
+        </div> -->
 
         <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Dev</span>
       </a>
@@ -217,13 +218,13 @@
 
       <!-- image - start -->
       <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
+        <img src="/assets/eden4.png"
           loading="lazy" alt="Photo by Lorenzo Herrera"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
-        <div
-          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-        </div>
+        <!-- <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-5">
+        </div> -->
 
         <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Retro</span>
       </a>
