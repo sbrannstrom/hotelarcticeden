@@ -7,13 +7,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
