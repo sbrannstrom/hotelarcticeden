@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IEdenInfo } from 'src/app/common/interfaces';
+import { IEdenInfo, LandingPage } from 'src/app/common/interfaces';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  landingPage!: Promise<Partial<LandingPage>>;
   menuOpen = false;
   edenArray: IEdenInfo[] = [
     {
@@ -41,9 +41,7 @@ export class HomeComponent {
     $element.scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} );
   }
 
-  async getLandingPageTexts() {
-    this.api.getLandingPage().then(res => {
-      console.log(res);
-    })
+  getLandingPageTexts() {
+    this.landingPage = this.api.getLandingPage();
   }
 }

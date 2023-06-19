@@ -10,30 +10,21 @@ export type LandingAboutUs = {
   content: string;
 }
 
-declare type Item = Record<string, any>;
-
-declare type TypeMap = {
-    [k: string]: object;
+export type LandingPage = {
+	id: string;
+  hero_image: string;
+	hero_title: string;
+  hero_button_text: string;
+  about_us_image: string;
+  about_us_title: string;
+  about_us_subtitle: string;
+  about_us_content: string;
 };
 
-declare type DefaultType = {
-    [field: string]: any;
+export type BlogSettings = {
+	display_promotions: boolean;
 };
-
-declare type TypeOf<T extends TypeMap, K extends keyof T> = T[K] extends undefined ? DefaultType : T[K];
-
-interface IItems<T extends Item>{
-  someMethod():T
-}
-
-declare class Directus<T extends TypeMap>{
-  items<C extends string, I extends Item = TypeOf<T, C>>(collection: C): IItems<I>;    
-}
-
-declare class MyType {
-  A:string;
-}
 
 export type MyCollections = {
-  "landing_page": MyType
-}
+	landing: LandingPage;
+};

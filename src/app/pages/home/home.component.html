@@ -1,79 +1,52 @@
 <div class="flex flex-col h-screen">
   <app-menu></app-menu>
-  <div class="flex flex-grow items-center justify-center mb-16"
-    style="background-image: url('https://images.unsplash.com/photo-1618004652321-13a63e576b80?auto=format&q=75&fit=crop&w=1500');">
-    <div class="absolute top-16 mb-16 inset-0 bg-navy-default mix-blend-multiply z-0"></div>
+  <div class="flex flex-grow items-center justify-center" *ngIf="landingPage | async as lp"
+    style="background-image: url({{ '/api/assets/' + lp.hero_image + '&fit=cover?width=1800&height=1356&quality=100' }});">
+    <div class="absolute top-16 inset-0 bg-gray-600 mix-blend-multiply z-0"></div>
     <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
-      <!-- <p class="mb-4 text-center text-lg font-RedHatDisplay text-indigo-200 sm:text-xl md:mb-8">Best Western</p> -->
       <div class="flex flex-row mb-5">
         <img src="/assets/logos/white_red.png">
-        <!-- <h1
-          class="mb-8 text-center text-4xl font-LemonMilk uppercase font-bold text-snow-default sm:text-5xl md:mb-12 md:text-6xl">
-          <span class="text-blood-default">A</span>rctic Eden Hotel
-        </h1> -->
       </div>
 
       <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
         <button (click)="scroll(book)" skipLocationChange
           class="inline-block rounded-lg bg-snow-default ml-4 px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-sun-500 transition duration-100 hover:bg-sun-default hover:text-white focus-visible:ring active:bg-snow-400 md:text-base">
-          Book Room
+          {{ lp.hero_button_text }}
         </button>
-
-        <!-- <a href="#"
-          class="inline-block rounded-lg bg-sun-default px-8 py-3 text-center text-sm font-semibold text-snow-default outline-none ring-sun-400 transition duration-100 hover:bg-sun-600 focus-visible:ring active:text-sun-700 md:text-base">Take
-          tour</a> -->
       </div>
     </div>
   </div>
 </div>
 <!-- BOOKING BAR CONTENT -->
-<div class="-mt-16" #book id="book">
-  <app-datepicker></app-datepicker>
+<div class="w-full flex justify-center items-center absolute z-10 -mt-16">
+  <div class="my-2 shadow-xl flex flex-row" #book id="book">
+    <app-datepicker></app-datepicker>
+    <app-datepicker></app-datepicker>
+  </div>
 </div>
 
 <!-- ABOUT SECTION CONTENT -->
-<div class="">
-  <div class="bg-snow-default py-6 sm:py-8 lg:py-12">
+<div class="" *ngIf="landingPage | async as lp">
+  <div class="bg-snow-default py-6 sm:py-8 lg:py-32">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div>
           <div class="h-64 overflow-hidden rounded-lg bg-navy-default shadow-lg md:h-auto">
-            <img
-              src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
-              loading="lazy" alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
+            <img [src]="'/api/assets/' + lp.about_us_image + '&width=300&height=300&quality=100'" loading="lazy"
+              alt="Photo by Martin Sanchez" class="h-full w-full object-cover object-center" />
           </div>
         </div>
 
         <div class="md:pt-8">
-          <p class="text-center font-bold text-sun-default md:text-left">Who we are</p>
+          <p class="text-center font-bold text-sun-default md:text-left">{{ lp.about_us_subtitle }}</p>
 
           <h1 class="mb-4 text-center text-2xl font-bold text-navy-default sm:text-3xl md:mb-6 md:text-left">
-            Arctic Eden Hotel
+            {{ lp.about_us_title }}
           </h1>
 
           <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-            of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or
-            generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real
-            text.<br /><br />
-
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics
-            of a real written text but is <a href="#"
-              class="text-navy-default underline transition duration-100 hover:text-black active:text-indigo-700">random</a>
-            or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler
-            text
-            is dummy text which has no meaning however looks very similar to real text.
+            {{ lp.about_us_content }}
           </p>
-
-          <h2 class="mb-2 text-center text-xl font-semibold text-navy-default sm:text-2xl md:mb-4 md:text-left">About us
-          </h2>
-
-          <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">This is a section of some simple filler text, also known as
-            placeholder text. It shares some characteristics of a real written text but is random or otherwise
-            generated.
-            It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which
-            has
-            no meaning however looks very similar to real text.</p>
         </div>
       </div>
     </div>
@@ -82,49 +55,84 @@
 
 
 <!-- EXPERIENCE ARCTIC EDEN -->
-<div class="bg-snow-default py-6 sm:py-8 lg:py-12">
+<div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-sun-default md:mb-6 lg:text-3xl">Experiences</h2>
+    <div class="mb-6 flex items-end justify-between gap-4">
+      <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl">Collections</h2>
 
-      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler
-        text, also known as placeholder text. It shares some characteristics of a real written text but is random or
-        otherwise generated.</p>
+      <a href="#"
+        class="inline-block rounded-lg border bg-white px-4 py-2 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">Show
+        more</a>
     </div>
 
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
       <!-- product - start -->
-      <a href="#" class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
-        <img src="https://images.unsplash.com/photo-1620243318482-fdd2affd7a38?auto=format&q=75&fit=crop&w=750"
-          loading="lazy" alt="Photo by Fakurian Design"
-          class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+      <div>
+        <a href="#" class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+          <img
+            src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
+            loading="lazy" alt="Photo by Austin Wade"
+            class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        </a>
 
-        <div
-          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        <div class="flex flex-col">
+          <span class="text-gray-500">Men</span>
+          <a href="#"
+            class="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Business
+            Causual</a>
         </div>
-
-        <div class="relative flex flex-col">
-          <span class="text-gray-300">Home</span>
-          <span class="text-lg font-semibold text-white lg:text-xl">Decoration</span>
-        </div>
-      </a>
+      </div>
       <!-- product - end -->
 
       <!-- product - start -->
-      <a href="#" class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
-        <img src="https://images.unsplash.com/photo-1620241608701-94ef138c7ec9?auto=format&q=75&fit=crop&w=750"
-          loading="lazy" alt="Photo by Fakurian Design"
-          class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+      <div>
+        <a href="#" class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+          <img
+            src="https://images.unsplash.com/photo-1603344797033-f0f4f587ab60?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
+            loading="lazy" alt="Photo by engin akyurt"
+            class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        </a>
 
-        <div
-          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+        <div class="flex flex-col">
+          <span class="text-gray-500">Women</span>
+          <a href="#"
+            class="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Summer
+            Season</a>
         </div>
+      </div>
+      <!-- product - end -->
 
-        <div class="relative flex flex-col">
-          <span class="text-gray-300">Modern</span>
-          <span class="text-lg font-semibold text-white lg:text-xl">Furniture</span>
+      <!-- product - start -->
+      <div>
+        <a href="#" class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+          <img
+            src="https://images.unsplash.com/photo-1552668693-d0738e00eca8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
+            loading="lazy" alt="Photo by Austin Wade"
+            class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        </a>
+
+        <div class="flex flex-col">
+          <span class="text-gray-500">Men</span>
+          <a href="#"
+            class="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Streetwear</a>
         </div>
-      </a>
+      </div>
+      <!-- product - end -->
+
+      <!-- product - start -->
+      <div>
+        <a href="#" class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+          <img src="https://images.unsplash.com/photo-1560269999-cef6ebd23ad3?auto=format&q=75&fit=crop&w=600&h=700"
+            loading="lazy" alt="Photo by Austin Wade"
+            class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        </a>
+
+        <div class="flex flex-col">
+          <span class="text-gray-500">Women</span>
+          <a href="#"
+            class="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Sale</a>
+        </div>
+      </div>
       <!-- product - end -->
     </div>
   </div>
@@ -134,7 +142,7 @@
 <div class="bg-snow-default py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <div class="mx-auto flex max-w-xl flex-col items-center text-center">
-      <p class="mb-4 font-semibold text-navy-default md:mb-6 md:text-lg xl:text-xl">Lorem Ipsum</p>
+      <p class="mb-4 font-semibold text-sun-default md:mb-6 md:text-lg xl:text-xl">Lorem Ipsum</p>
 
       <h1 class="text-black-800 mb-8 text-3xl font-bold sm:text-4xl md:mb-12 md:text-5xl">
         Pub Eden
@@ -172,10 +180,8 @@
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       <!-- image - start -->
-      <a href="#"
-        class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-        <img src="/assets/eden0.png"
-          loading="lazy" alt="Photo by Minh Pham"
+      <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
+        <img src="/assets/eden0.png" loading="lazy" alt="Photo by Minh Pham"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
         <!-- <div
@@ -189,8 +195,7 @@
       <!-- image - start -->
       <a href="#"
         class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-        <img src="/assets/eden1.png"
-          loading="lazy" alt="Photo by Magicle"
+        <img src="/assets/eden1.png" loading="lazy" alt="Photo by Magicle"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
         <!-- <div
@@ -204,8 +209,7 @@
       <!-- image - start -->
       <a href="#"
         class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-        <img src="/assets/eden2.png"
-          loading="lazy" alt="Photo by Martin Sanchez"
+        <img src="/assets/eden2.png" loading="lazy" alt="Photo by Martin Sanchez"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
         <!-- <div
@@ -218,8 +222,7 @@
 
       <!-- image - start -->
       <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-        <img src="/assets/eden4.png"
-          loading="lazy" alt="Photo by Lorenzo Herrera"
+        <img src="/assets/eden4.png" loading="lazy" alt="Photo by Lorenzo Herrera"
           class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
         <!-- <div
