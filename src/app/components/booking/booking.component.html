@@ -1,5 +1,11 @@
-<div class="card flex justify-content-center p-8">
+<div class="card flex justify-content-center p-8 bg-white shadow-lg">
   <!-- <form [formGroup]="formGroup"> -->
-    <p-calendar [minDate]="today" [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" placeholder="When?"></p-calendar>
+  <p-calendar [minDate]="today" [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"
+    placeholder="Arrival/Departure"></p-calendar>
+  <p-button (click)="op.toggle($event)" icon="pi pi-chevron-down" label="Guests" [styleClass]="'p-button bg-navy-default'"></p-button>
+
+  <p-overlayPanel #op>
+    <img src="https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg" alt="product" />
+  </p-overlayPanel>
   <!-- </form> -->
 </div>

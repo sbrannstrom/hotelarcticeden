@@ -16,12 +16,12 @@ export class MenuComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      if (document.body.scrollTop > 64 || document.documentElement.scrollTop > 64) {
         this.showTopButton = true;
         this.headerClass = 'sticky-header';
       } else {
         this.showTopButton = false;
-        this.headerClass = 'bg-opacity-0';
+        this.headerClass = 'transition-colors duration-300 bg-opacity-0';
       }
     })
   }
@@ -35,9 +35,14 @@ export class MenuComponent implements OnInit, OnDestroy {
   public scroll(id: string): void {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView( {behavior: "smooth", block: "center", inline: "nearest"} );
+      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     } else {
       this.router.navigate([], { fragment: id });
     }
+  }
+
+  scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 }

@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalendarModule } from 'primeng/calendar';
 import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 import { BookingComponent } from './components/booking/booking.component';
 import { AboutComponent } from './components/about/about.component';
@@ -34,6 +36,8 @@ import { AboutComponent } from './components/about/about.component';
     CalendarModule,
     ReactiveFormsModule,
     CarouselModule,
+    ButtonModule,
+    OverlayPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,25 +29,25 @@
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
           <!-- Current: "border-bw-blue-default text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
           <a (click)="scroll('about')" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-bw-blue-default px-1 pt-1 text-sm font-medium text-white">Hem</a>
+            class="inline-flex items-center border-b-2 border-bw-blue-default px-1 pt-1 text-sm font-medium text-white cursor-pointer">Hem</a>
           <a (click)="scroll('book')" routerLinkActive="activeLink"
             class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Boka
           </a>
           <a href="#" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default">
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Våra Rum
           </a>
           <a href="#" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default">
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Relax
           </a>
-          <a href="#" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default">
+          <a (click)="scroll('eden')" routerLinkActive="activeLink"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Pub Eden
           </a>
           <a href="#" routerLinkActive="activeLink"
-            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default">
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Kontakt
           </a>
         </div>
@@ -109,3 +109,4 @@
     </div>
   </div>
 </nav>
+<p-button (click)="scrollToTop()" *ngIf="showTopButton" icon="pi pi-chevron-up" styleClass="p-button-rounded p-button-secondary fixed bottom-5 right-5"></p-button>

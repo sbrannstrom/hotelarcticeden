@@ -1,28 +1,33 @@
-<div class="grid sm:grid-cols-2 grid-cols-1 gap-4 p-24">
+<div class="grid sm:grid-cols-2 grid-cols-1 gap-4 p-24 bg-white text-navy-default">
   <div class="flex flex-col justify-evenly px-10">
     <div class="flex flex-col">
-      <span class="text-semibold font-RedHatDisplay">Lorem Ipsum</span>
+      <div class="mb-3">
+        <span class="text-semibold font-RedHatDisplay">Lorem Ipsum</span>
+      </div>
+
       <span class="text-4xl tracking-wider font-LemonMilk">
-        Lorem Ipsum Dolor <br> Lorem Ipsum Dolor
-        Lorem
+        Lorem ipsum
       </span>
     </div>
-    <div class="">
-      <span class="font-RedHatDisplay">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Purus sit amet luctus venenatis lectus magna fringilla urna porttitor. Orci phasellus egestas tellus
-        rutrum
-        tellus. Euismod lacinia at quis risus sed vulputate.
-        <br><br>
-        Nulla at volutpat diam ut venenatis tellus. Erat imperdiet sed euismod nisi porta lorem. In arcu cursus euismod
-        quis
-        viverra nibh cras pulvinar. In cursus turpis massa tincidunt dui. Id nibh tortor id aliquet lectus proin.
-        Senectus et
-        netus et malesuada fames ac turpis egestas. Et malesuada fames ac turpis egestas maecenas. Dignissim enim sit
-        amet
-        venenatis urna cursus eget.
-      </span>
+    <div class="grid grid-cols-2 gap-x-4">
+      <div class="font-RedHatDisplay">
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna
+          aliqua. Purus sit amet luctus venenatis lectus magna fringilla urna porttitor. Orci phasellus egestas tellus
+          rutrum
+          tellus.
+        </span>
+      </div>
+      <div class="font-RedHatDisplay">
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna
+          aliqua. Purus sit amet luctus venenatis lectus magna fringilla urna porttitor. Orci phasellus egestas tellus
+          rutrum
+          tellus. Euismod lacinia at quis risus sed vulputate.
+        </span>
+      </div>
     </div>
   </div>
 
@@ -31,7 +36,8 @@
       <p-carousel [autoplayInterval]="10000" [showNavigators]="false" [numVisible]="1" [numScroll]="1" [page]="0"
         [circular]="true" [value]="sliderContent">
         <ng-template *ngFor="let item of sliderContent" pTemplate="slider">
-          <img class="rounded-sm shadow-lg" [src]="item">
+          <img class="shadow-lg h-full w-full object-cover object-center transition duration-200 hover:scale-110"
+            [src]="item">
         </ng-template>
       </p-carousel>
     </div>

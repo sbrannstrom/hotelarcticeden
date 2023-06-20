@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IEdenInfo, LandingPage } from 'src/app/common/interfaces';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -33,12 +34,17 @@ export class HomeComponent {
     },
   ];
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
     this.getLandingPageTexts();
   }
 
-  public scroll($element: HTMLElement): void {
-    $element.scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} );
+  public scroll(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    } else {
+      this.router.navigate([], { fragment: id });
+    }
   }
 
   getLandingPageTexts() {
