@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,8 @@ export class MenuComponent implements OnInit, OnDestroy {
   mobileMenuOpen = false;
   headerClass = 'bg-opacity-0';
   showTopButton = false;
+
+  constructor(private router: Router) {}
   
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
@@ -32,7 +35,9 @@ export class MenuComponent implements OnInit, OnDestroy {
   public scroll(id: string): void {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView( {behavior: "smooth", block: "start", inline: "nearest"} );
+      element.scrollIntoView( {behavior: "smooth", block: "center", inline: "nearest"} );
+    } else {
+      this.router.navigate([], { fragment: id });
     }
   }
 }

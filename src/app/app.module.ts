@@ -11,7 +11,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalendarModule } from 'primeng/calendar';
+import { CarouselModule } from 'primeng/carousel';
+
 import { BookingComponent } from './components/booking/booking.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { BookingComponent } from './components/booking/booking.component';
     MenuComponent,
     DatepickerComponent,
     FooterComponent,
-    BookingComponent
+    BookingComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,7 @@ import { BookingComponent } from './components/booking/booking.component';
     FormsModule,
     CalendarModule,
     ReactiveFormsModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
