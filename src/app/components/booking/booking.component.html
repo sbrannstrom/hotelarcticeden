@@ -1,0 +1,5 @@
+<div class="card flex justify-content-center p-8">
+  <form [formGroup]="formGroup">
+    <p-calendar [minDate]="today" [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" placeholder="When?"></p-calendar>
+  </form>
+</div>

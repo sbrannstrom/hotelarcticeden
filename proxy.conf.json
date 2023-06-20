@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://directus.relentless.wtf",
+    "target": "http://localhost:8055",
     "secure": false,
     "pathRewrite": {
       "^/api": ""

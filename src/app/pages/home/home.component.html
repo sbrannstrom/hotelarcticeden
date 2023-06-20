@@ -1,8 +1,7 @@
 <div class="flex flex-col h-screen">
-  <app-menu></app-menu>
   <div class="flex flex-grow items-center justify-center" *ngIf="landingPage | async as lp"
     style="background-image: url({{ '/api/assets/' + lp.hero_image + '&fit=cover?width=1800&height=1356&quality=100' }});">
-    <div class="absolute top-16 inset-0 bg-gray-600 mix-blend-multiply z-0"></div>
+    <div class="absolute top-0 inset-0 bg-gray-600 mix-blend-multiply z-0"></div>
     <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
       <div class="flex flex-row mb-5">
         <img src="/assets/logos/white_red.png">
@@ -18,16 +17,13 @@
   </div>
 </div>
 <!-- BOOKING BAR CONTENT -->
-<div class="w-full flex justify-center items-center absolute z-10 -mt-16">
-  <div class="my-2 shadow-xl flex flex-row" #book id="book">
-    <app-datepicker></app-datepicker>
-    <app-datepicker></app-datepicker>
-  </div>
+<div class="w-full flex justify-center items-center absolute z-10 -mt-16" #book>
+  <app-booking></app-booking>
 </div>
 
 <!-- ABOUT SECTION CONTENT -->
 <div class="" *ngIf="landingPage | async as lp">
-  <div class="bg-snow-default py-6 sm:py-8 lg:py-32">
+  <div class="bg-white py-6 sm:py-8 lg:py-32">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div>
