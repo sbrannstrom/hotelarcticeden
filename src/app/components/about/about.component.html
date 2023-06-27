@@ -1,15 +1,15 @@
-<div class="grid sm:grid-cols-2 grid-cols-1 gap-4 p-24 bg-white text-navy-default">
-  <div class="flex flex-col justify-evenly px-10">
+<div class="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:p-24 bg-navy-default text-snow-default">
+  <div class="flex flex-col justify-start sm:px-10 px-4">
     <div class="flex flex-col">
       <div class="mb-3">
         <span class="text-semibold font-RedHatDisplay">Lorem Ipsum</span>
       </div>
 
-      <span class="text-4xl tracking-wider font-LemonMilk">
+      <span class="text-6xl tracking-wider font-LemonMilk">
         Lorem ipsum
       </span>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 gap-x-4 sm:my-10">
       <div class="font-RedHatDisplay">
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -19,7 +19,7 @@
           tellus.
         </span>
       </div>
-      <div class="font-RedHatDisplay">
+      <div class="font-RedHatDisplay my-5">
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna
@@ -34,7 +34,7 @@
   <div class="w-full h-full">
     <div class="flex justify-center">
       <p-carousel [autoplayInterval]="10000" [showNavigators]="false" [numVisible]="1" [numScroll]="1" [page]="0"
-        [circular]="true" [value]="sliderContent">
+        [circular]="true" [value]="sliderContent" indicatorsContentClass="bg-snow-default">
         <ng-template *ngFor="let item of sliderContent" pTemplate="slider">
           <img class="shadow-lg h-full w-full object-cover object-center transition duration-200 hover:scale-110"
             [src]="item">

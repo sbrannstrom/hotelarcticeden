@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  sliderContent: string[] = ['https://placehold.co/600x900', 'https://placehold.co/600x900', 'https://placehold.co/600x900'];
+  sliderContent: string[] = [
+    'https://placehold.co/600x900',
+    'https://placehold.co/600x900',
+    'https://placehold.co/600x900'
+    ];
 }

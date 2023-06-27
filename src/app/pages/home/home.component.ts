@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IEdenInfo, LandingPage } from 'src/app/common/interfaces';
 import { ApiService } from 'src/app/services/api.service';
@@ -8,9 +8,10 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   landingPage!: Promise<Partial<LandingPage>>;
   menuOpen = false;
+  now = Date.now();
   edenArray: IEdenInfo[] = [
     {
       src: '/assets/eden0.png',
@@ -35,6 +36,10 @@ export class HomeComponent {
   ];
 
   constructor(private api: ApiService, private router: Router) {
+
+  }
+
+  ngOnInit(): void {
     this.getLandingPageTexts();
   }
 

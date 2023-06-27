@@ -1,3 +1,8 @@
+<nav>
+  <div>
+
+  </div>
+</nav>
 <nav [ngClass]="headerClass" class="relative z-50 bg-opacity-0">
   <div class="mx-auto">
     <div class="relative flex h-16 justify-between bg-opacity-0">
@@ -23,8 +28,8 @@
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center ml-2">
-          <img class="block h-8 w-auto lg:hidden" src="./assets/bw.png" alt="Your Company">
-          <img class="hidden h-8 w-auto lg:block" src="./assets/bw.png" alt="Your Company">
+          <img class="block h-8 w-auto lg:hidden" src="./assets/bw.png" alt="Arctic Eden Hotel">
+          <img class="hidden h-8 w-auto lg:block" src="./assets/bw.png" alt="Arctic Eden Hotel">
         </div>
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
           <!-- Current: "border-bw-blue-default text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
@@ -38,9 +43,9 @@
             class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
             Våra Rum
           </a>
-          <a href="#" routerLinkActive="activeLink"
+          <a (click)="scroll('experiences')" routerLinkActive="activeLink"
             class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
-            Relax
+            Upplevelser
           </a>
           <a (click)="scroll('eden')" routerLinkActive="activeLink"
             class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-white hover:border-bw-gray hover:text-bw-blue-default cursor-pointer">
